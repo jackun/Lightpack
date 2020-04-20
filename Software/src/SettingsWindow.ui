@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>482</width>
-    <height>649</height>
+    <width>518</width>
+    <height>791</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -213,7 +213,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="tabSoftwareOptions">
        <property name="enabled">
@@ -2649,6 +2649,13 @@ Internally emulates the effects of f.lux, redshift, Night Light, Night Shift...<
                 <widget class="QRadioButton" name="radioButton_GrabDDupl">
                  <property name="text">
                   <string>Win8 Desktop Duplication</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QRadioButton" name="radioButton_GrabKMS">
+                 <property name="text">
+                  <string>KMS dma-buf (Full screen)</string>
                  </property>
                 </widget>
                </item>

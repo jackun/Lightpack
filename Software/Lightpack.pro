@@ -33,7 +33,8 @@ TEMPLATE = subdirs
 
 include(build-config.prf)
 
-SUBDIRS = src
+SUBDIRS = src \
+    drmsend
 SUBDIRS += math grab
 src.depends = math grab
 

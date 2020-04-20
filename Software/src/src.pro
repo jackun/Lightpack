@@ -175,7 +175,7 @@ unix:!macx{
     # Linux version using libusb and hidapi codes
     SOURCES += hidapi/linux/hid-libusb.c
     # For X11 grabber
-    LIBS +=-lXext -lX11
+    LIBS +=-lXext -lX11 -lEGL -lGL
 
     QMAKE_CXXFLAGS += -std=c++11
     contains(DEFINES,PULSEAUDIO_SUPPORT) {

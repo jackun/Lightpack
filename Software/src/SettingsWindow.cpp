@@ -284,6 +284,7 @@ void SettingsWindow::connectSignalsSlots()
 #endif
 #ifdef X11_GRAB_SUPPORT
 	connect(ui->radioButton_GrabX11, SIGNAL(toggled(bool)), this, SLOT(onGrabberChanged()));
+    connect(ui->radioButton_GrabKMS, SIGNAL(toggled(bool)), this, SLOT(onGrabberChanged()));
 #endif
 #ifdef MAC_OS_AV_GRAB_SUPPORT
 	connect(ui->radioButton_GrabMacAVFoundation, SIGNAL(toggled(bool)), this, SLOT(onGrabberChanged()));
@@ -825,8 +826,9 @@ void SettingsWindow::initGrabbersRadioButtonsVisibility()
 #endif
 #ifndef X11_GRAB_SUPPORT
 	ui->radioButton_GrabX11->setVisible(false);
+    ui->radioButton_GrabKMS->setVisible(false);
 #else
-	ui->radioButton_GrabX11->setChecked(true);
+    ui->radioButton_GrabX11->setChecked(true);
 #endif
 #ifndef MAC_OS_AV_GRAB_SUPPORT
 	ui->radioButton_GrabMacAVFoundation->setVisible(false);
@@ -1941,6 +1943,9 @@ void SettingsWindow::updateUiFromSettings()
 	case Grab::GrabberTypeX11:
 		ui->radioButton_GrabX11->setChecked(true);
 		break;
+    case Grab::GrabberTypeKMS:
+        ui->radioButton_GrabKMS->setChecked(true);
+        break;
 #endif
 #ifdef MAC_OS_AV_GRAB_SUPPORT
 	case Grab::GrabberTypeMacAVFoundation:
@@ -1975,6 +1980,9 @@ Grab::GrabberType SettingsWindow::getSelectedGrabberType()
 	if (ui->radioButton_GrabX11->isChecked()) {
 		return Grab::GrabberTypeX11;
 	}
+    if (ui->radioButton_GrabKMS->isChecked()) {
+        return Grab::GrabberTypeKMS;
+    }
 #endif
 #ifdef WINAPI_GRAB_SUPPORT
 	if (ui->radioButton_GrabWinAPI->isChecked()) {

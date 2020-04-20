@@ -75,6 +75,7 @@ win32 {
 }
 
 HEADERS += \
+    include/KMSGrabber.hpp \
     include/calculations.hpp \
     include/GrabberBase.hpp \
     include/ColorProvider.hpp \
@@ -83,6 +84,7 @@ HEADERS += \
     $${GRABBERS_HEADERS}
 
 SOURCES += \
+    KMSGrabber.cpp \
     calculations.cpp \
     GrabberBase.cpp \
     include/ColorProvider.cpp \
